@@ -26,7 +26,7 @@ ALLOWED_HOSTS = []
 # APPS
 
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,13 +35,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
+
+NEBULEI_APPS = [
+    'core',
+]
+
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + NEBULEI_APPS
+
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #MIDDLEWARE
 
 
-MIDDLEWARE = [
+DJANGO_MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +62,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+THIRD_PARTY_MIDDLEWARE = [
+
+]
+
+
+MIDDLEWARE = DJANGO_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE
+
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -59,8 +77,10 @@ MIDDLEWARE = [
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-APPS_DIR = os.path.join(BASE_DIR, '/apps/')
+
+APPS_DIR = os.path.join(BASE_DIR, './apps/')
 sys.path.insert(0, APPS_DIR)
+
 
 ROOT_URLCONF = 'nebulei.urls'
 
@@ -148,8 +168,16 @@ STATIC_URL = 'static/'
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# Default primary key field type
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# THIRD PARTY CONFIGURATONS
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
