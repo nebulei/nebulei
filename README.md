@@ -1,4 +1,5 @@
-<!-- PROJECT LOGO -->
+> **Are you more a frontend guy? This is our frontend repo for Nebulei's site: [Nebulei Front-End Repo](https://github.com/nebuleia/nebulei)**
+
 <br />
 <div align="center">
   <a href="https://github.com/Nebuleia/nebulei">
