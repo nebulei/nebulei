@@ -37,6 +37,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    "corsheaders",
 ]
 
 NEBULEI_APPS = [
@@ -63,7 +64,7 @@ DJANGO_MIDDLEWARE = [
 ]
 
 THIRD_PARTY_MIDDLEWARE = [
-
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 
@@ -176,8 +177,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # THIRD PARTY CONFIGURATONS
 
+
+# DJANGO REST FRAMEWORK
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# DJANGO CORS HEADERS
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
