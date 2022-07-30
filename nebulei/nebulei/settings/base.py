@@ -12,10 +12,11 @@ import sys
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-SECRET_KEY = 'django-insecure-w2(4zg$+7sqflu02_b==frxbiekm&6piab66w552-v$lukv06a'
+SECRET_KEY = 't7g$gddxotz%5_gwrt64xf#-bjwr(bk_#10!ur9et_s-*vhqti'
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 # APPS
 
@@ -185,6 +186,8 @@ REST_FRAMEWORK = {
 }
 
 # DJANGO CORS HEADERS
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
