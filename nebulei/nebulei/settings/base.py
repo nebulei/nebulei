@@ -12,16 +12,11 @@ import sys
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-SECRET_KEY = 'django-insecure-w2(4zg$+7sqflu02_b==frxbiekm&6piab66w552-v$lukv06a'
-
-
-DEBUG = True
-
-
-ALLOWED_HOSTS = []
+SECRET_KEY = 't7g$gddxotz%5_gwrt64xf#-bjwr(bk_#10!ur9et_s-*vhqti'
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 # APPS
 
@@ -37,6 +32,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    "corsheaders",
 ]
 
 NEBULEI_APPS = [
@@ -63,7 +59,7 @@ DJANGO_MIDDLEWARE = [
 ]
 
 THIRD_PARTY_MIDDLEWARE = [
-
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 
@@ -75,7 +71,7 @@ MIDDLEWARE = DJANGO_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE
 # ROOTS
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 APPS_DIR = os.path.join(BASE_DIR, './apps/')
@@ -163,7 +159,11 @@ USE_TZ = True
 # STATIC FILES (CSS, JavaScript, Images)
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '/path/')
+MEDIA_URL = '/path/'
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -176,8 +176,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # THIRD PARTY CONFIGURATONS
 
+
+# DJANGO REST FRAMEWORK
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# DJANGO CORS HEADERS
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
