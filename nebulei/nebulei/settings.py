@@ -12,7 +12,22 @@ import sys
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-SECRET_KEY = 't7g$gddxotz%5_gwrt64xf#-bjwr(bk_#10!ur9et_s-*vhqti'
+DEBUG = True
+
+
+ALLOWED_HOSTS = [
+    '*'
+]
+
+
+SECRET_KEY = 'u&3va&+ye)j2-m1@t^99tvw@tggdy#mtca yv76r_dj)9as4*5$'
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+)
+
+MANAGERS = ADMINS
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -71,7 +86,7 @@ MIDDLEWARE = DJANGO_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE
 # ROOTS
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 APPS_DIR = os.path.join(BASE_DIR, './apps/')
