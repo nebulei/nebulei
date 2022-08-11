@@ -4,7 +4,7 @@
     <img src="assets/nebulei-logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Nebulei's Backend</h3>
+  <h3 align="center">Nebulei's</h3>
 
   <p align="center">
     Collaboration, Creation, Discovery is what we are about
