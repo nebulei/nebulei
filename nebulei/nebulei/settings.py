@@ -15,6 +15,9 @@ import sys
 DEBUG = True
 
 
+SITE_ID = 1
+
+
 ALLOWED_HOSTS = [
     '*'
 ]
@@ -24,7 +27,7 @@ SECRET_KEY = 'u&3va&+ye)j2-m1@t^99tvw@tggdy#mtca yv76r_dj)9as4*5$'
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Adrian Blanc', 'lalo@nebulei.com'),
 )
 
 MANAGERS = ADMINS
@@ -52,6 +55,7 @@ THIRD_PARTY_APPS = [
 
 NEBULEI_APPS = [
     'core',
+    'registrar',
 ]
 
 
@@ -93,6 +97,10 @@ APPS_DIR = os.path.join(BASE_DIR, './apps/')
 sys.path.insert(0, APPS_DIR)
 
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
 ROOT_URLCONF = 'nebulei.urls'
 
 
@@ -103,7 +111,7 @@ ROOT_URLCONF = 'nebulei.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -175,10 +183,13 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/path/')
-MEDIA_URL = '/path/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_URL = '/media/'
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -208,3 +219,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
 ]
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# REDIRECTIONS
+
+LOGIN_REDIRECT_URL = '/'
