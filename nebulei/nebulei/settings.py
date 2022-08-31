@@ -18,9 +18,7 @@ DEBUG = True
 SITE_ID = 1
 
 
-ALLOWED_HOSTS = [
-    '*'
-]
+ALLOWED_HOSTS =  ['*']
 
 
 SECRET_KEY = 'u&3va&+ye)j2-m1@t^99tvw@tggdy#mtca yv76r_dj)9as4*5$'
@@ -183,12 +181,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 MEDIA_URL = '/media/'
 
 
