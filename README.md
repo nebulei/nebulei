@@ -25,8 +25,8 @@
 
 # Nebulei
 
-Nebulei is a  Social-Network for intellectuals to share their work or opinion on subjects like **`Science`**,
-**`Technology`**, **`Philosophy`**, **`Engineering`**, and **`History`**, ect. Meanwhile making large progress in `creation`,
+Nebulei is a  Social-Network for people of different skilled backgrounds to share their research, opinion or work on subjects like **`Science`**,
+**`Technology`**, **`Philosophy`**, **`Engineering`**, and **`History`**, so on. Meanwhile making large progress in `creation`,
 `discovery`, `invention`, and most importantly; allowing `collaboration` to take place
 as we believe there is a lack of shared work among intellectuals of the world.
 
