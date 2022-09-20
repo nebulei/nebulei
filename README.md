@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/Nebuleia/nebulei">
+  <a href="https://github.com/Nebulei/nebulei">
     <img src="assets/nebulei-logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -9,7 +9,7 @@
   <p align="center">
     Collaboration, Creation, Discovery is what we are about
     <br />
-    <a href="https://github.com/Nebuleia/nebulei/fork"><strong>Contribute »</strong></a>
+    <a href="https://github.com/Nebulei/nebulei/fork"><strong>Contribute »</strong></a>
   </p>
 
 </div>
@@ -18,11 +18,11 @@
 <br />
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/github/issues/nebuleia/nebulei" alt="" /></a>
-  <a href="#"><img src="https://img.shields.io/github/forks/nebuleia/nebulei" alt="" /></a>
-  <a href="#"><img src="https://img.shields.io/github/stars/nebuleia/nebulei" alt="" /></a>
-  <a href="#"><img src="https://img.shields.io/github/contributors/nebuleia/nebulei" alt="" /></a>
-  <a href="#"><img src="https://img.shields.io/github/sponsors/nebuleia?color=907AD6&label=Nebulei%20Sponsors" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/issues/nebulei/nebulei" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/forks/nebulei/nebulei" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/stars/nebulei/nebulei" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/contributors/nebulei/nebulei" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/sponsors/nebulei?color=907AD6&label=Nebulei%20Sponsors" alt="" /></a>
 </p>
 
 # Nebulei
