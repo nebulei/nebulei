@@ -10,6 +10,7 @@
     Collaboration, Creation, Discovery is what we are about
     <br />
     <a href="https://github.com/Nebuleia/nebulei/fork"><strong>Contribute »</strong></a>
+  </p>
 
 </div>
 
@@ -21,13 +22,18 @@
   <a href="#"><img src="https://img.shields.io/github/forks/nebuleia/nebulei" alt="" /></a>
   <a href="#"><img src="https://img.shields.io/github/stars/nebuleia/nebulei" alt="" /></a>
   <a href="#"><img src="https://img.shields.io/github/contributors/nebuleia/nebulei" alt="" /></a>
+  <a href="#"><img src="https://img.shields.io/github/sponsors/nebuleia?color=907AD6&label=Nebulei%20Sponsors" alt="" /></a>
 </p>
 
 # Nebulei
 
+<<<<<<< HEAD
 Nebulei is a social-network for people of different skilled backgrounds to share their research, publications, work, or opinion on diverse theoretical subjects. Meanwhile making large progress in `creation`,
 `discovery`, `invention`, and most importantly; `collaboration`,
 as we believe there is a lack of shared information & work among intellectuals of the world.
+=======
+Nebulei is a social-network for people of different skilled backgrounds to share their `research`, `publications`, `work`, or `opinion` on diverse theoretical subjects. Meanwhile making large progress in **`creation`**, **`discovery`**, **`invention`**, and most importantly; **`collaboration`**, as we believe there is a lack of shared information & work among intellectuals of the world.
+>>>>>>> 90ca99a (deletion of core app)
 
 > **We are working hard on Nebulei's first version. If you are new to Nebulei, try experimenting on new features with us.**
 
