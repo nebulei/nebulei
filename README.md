@@ -33,16 +33,16 @@ Nebulei is a social-network for people of different skilled backgrounds to share
 
 ## Contributing
 
-We are creating Nebulei because we want to scale humanities knowledge in all different subjects by letting intellectuals have the opportunity to collaborate. We hope that you beautiful humans can help in implementing new features. We are thankful for any contributions from the community.
+We are creating Nebulei because we want to scale humanities knowledge in all different subjects by letting people have the opportunity to collaborate. We hope that you beautiful humans can help in implementing new features. We are thankful for any contributions from the community.
 
 ### Code of Conduct
 
-Nebulei has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/nebuleia/nebulei/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated. Talk to people of all backgrounds
+Nebulei has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/nebulei/nebulei/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated. Talk to people of all backgrounds
 
 ### Contributing guide
 
-Read our [contributing guide](https://github.com/nebuleia/nebulei/blob/main/CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to Nebulei.
+Read our [contributing guide](https://github.com/nebulei/nebulei/blob/main/CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to Nebulei.
 
 ### Beginner-friendly bugs
 
-To help you get your feet wet and get you familiar with our contribution process, we have a list of [beginner-friendly bugs](https://github.com/nebuleia/nebulei/labels/good%20first%20issue) that might contain smaller issues to tackle first. This is a great place to get started.
+To help you get your feet wet and get you familiar with our contribution process, we have a list of [beginner-friendly bugs](https://github.com/nebulei/nebulei/labels/good%20first%20issue) that might contain smaller issues to tackle first. This is a great place to get started.
