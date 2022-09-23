@@ -4,4 +4,4 @@ If you believe you have found a security vulnerability in Nebulei, we encourage 
 
 Please refer to the following page for our responsible disclosure policy, reward guidelines, and those things that should not be reported:
 
-P**AGE IN PRODUCTION**
+**PAGE IN PRODUCTION**
