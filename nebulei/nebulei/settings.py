@@ -52,7 +52,6 @@ THIRD_PARTY_APPS = [
 ]
 
 NEBULEI_APPS = [
-    'registrar',
     'feed',
     'account',
 ]
