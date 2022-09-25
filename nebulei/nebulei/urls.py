@@ -13,7 +13,6 @@ third_party_urls = [
 ]
 
 nebulei_urls = [
-    path('', include('registrar.urls')),
 ]
 
 
