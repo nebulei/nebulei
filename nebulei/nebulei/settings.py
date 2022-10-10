@@ -162,8 +162,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # INTERNATIONALIZATION
 
+LANGUAGES = [
+    ('es', ('Spanish')),
+    ('en', ('English')),
+    ('de', ('German')),
+    ('nl', ('Dutch')),
+    ('da', ('Danish')),
+    ('hu', ('Hungarian')),
+    ('sv', ('Swedish')),
+    ('fr', ('French')),
+    ('it', ('Italian')),
+    ('tr', ('Turkish')),
+    ('pt-br', ('Portuguese, Brazilian')),
+]
 
-LANGUAGE_CODE = 'en-us'
+
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
