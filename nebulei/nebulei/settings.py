@@ -45,12 +45,16 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
-    "corsheaders",
+    'corsheaders',
 ]
 
 NEBULEI_APPS = [
-    'feed',
+    'categories',
     'account',
+    'notifications',
+    'posts',
+    'recommended',
+    'registrar',
 ]
 
 
