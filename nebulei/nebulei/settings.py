@@ -49,7 +49,9 @@ THIRD_PARTY_APPS = [
 ]
 
 NEBULEI_APPS = [
+    'common',
     'categories',
+    'account',
     'notifications',
     'posts',
     'recommended',
