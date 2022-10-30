@@ -5,6 +5,8 @@
 
 from pathlib import Path
 
+from datetime import timedelta
+
 import os
 import sys
 
@@ -15,16 +17,14 @@ import sys
 DEBUG = True
 
 
-ALLOWED_HOSTS = [
-    '*'
-]
+ALLOWED_HOSTS =  ['*']
 
 
 SECRET_KEY = 'u&3va&+ye)j2-m1@t^99tvw@tggdy#mtca yv76r_dj)9as4*5$'
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Adrian Blanc', 'lalo@nebulei.com'),
 )
 
 MANAGERS = ADMINS
@@ -47,11 +47,16 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
-    "corsheaders",
+    'corsheaders',
 ]
 
 NEBULEI_APPS = [
-    'core',
+    'common',
+    'categories',
+    'account',
+    'notifications',
+    'posts',
+    'recommended',
 ]
 
 
@@ -74,7 +79,7 @@ DJANGO_MIDDLEWARE = [
 ]
 
 THIRD_PARTY_MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -93,6 +98,10 @@ APPS_DIR = os.path.join(BASE_DIR, './apps/')
 sys.path.insert(0, APPS_DIR)
 
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
 ROOT_URLCONF = 'nebulei.urls'
 
 
@@ -103,7 +112,7 @@ ROOT_URLCONF = 'nebulei.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -159,8 +168,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # INTERNATIONALIZATION
 
+LANGUAGES = [
+    ('es', ('Spanish')),
+    ('en', ('English')),
+    ('de', ('German')),
+    ('nl', ('Dutch')),
+    ('da', ('Danish')),
+    ('hu', ('Hungarian')),
+    ('sv', ('Swedish')),
+    ('fr', ('French')),
+    ('it', ('Italian')),
+    ('tr', ('Turkish')),
+    ('pt-br', ('Portuguese, Brazilian')),
+]
 
-LANGUAGE_CODE = 'en-us'
+
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -175,10 +198,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/path/')
-MEDIA_URL = '/path/'
+MEDIA_URL = '/media/'
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -196,15 +217,41 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 # DJANGO CORS HEADERS
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# CUSTOM USER MODEL
+
+AUTH_USER_MODEL = "account.NewUser"
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=10),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+}
