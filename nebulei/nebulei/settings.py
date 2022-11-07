@@ -53,7 +53,7 @@ NEBULEI_APPS = [
     'categories',
     'account',
     'notifications',
-    'posts',
+    'pulsar',
     'recommended',
     'golem',
 ]
