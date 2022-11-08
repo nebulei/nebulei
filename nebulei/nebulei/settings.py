@@ -55,7 +55,10 @@ NEBULEI_APPS = [
     'notifications',
     'pulsar',
     'recommended',
-    'golem',
+    'fellowship',
+    'dominion',
+    'skirmish',
+    'duel',
 ]
 
 
