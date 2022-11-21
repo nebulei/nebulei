@@ -93,6 +93,9 @@ MIDDLEWARE = DJANGO_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE
 # ROOTS
 
 
+AUTH_USER_MODEL = 'account.User'
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
