@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import AbstractUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
 from account.config import FIRST_NAME_MAX_LENGTH, LAST_NAME_MAX_LENGTH, \
@@ -12,40 +12,6 @@ from account.username import default_display_name
 
 from categories.prowess import PROWESS_SELECTION
 
-
-
-class CustomUserManager(BaseUserManager):
-
-    def create_user(self, email,username, password, **extra_fields):
-        """
-          Create and save a SuperUser with the given email,first name , lastname and password.
-        """
-        if not email:
-            raise ValueError(_('The Email must be set'))
-        if not username:
-            raise ValueError(_('Username must be set'))
-        if not password:
-            raise ValueError(_('Password must be set'))
-
-        email = self.normalize_email(email)
-        user = self.model(email=email,username=username, **extra_fields)
-        user.set_password(password)
-        user.save()
-        return user
-
-    def create_superuser(self, email,username, password, **extra_fields):
-        """
-        Create and save a SuperUser with the given email,first name , lastname and password.
-        """
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_active', True)
-
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError(_('Superuser must have is_staff=True.'))
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError(_('Superuser must have is_superuser=True.'))
-        return self.create_user(email,username, password, **extra_fields)
 
 
 class User(AbstractUser):
@@ -72,15 +38,14 @@ class User(AbstractUser):
     )
 
     username = models.CharField (
-        _('username'),
         max_length=USERNAME_MAX_LENGTH,
         blank=False,
         null=False,
         unique=True,
+        default=default_display_name,
     )
 
     email = models.EmailField (
-        _('email address'),
         max_length=EMAIL_MAX_LENGTH,
         unique=True, 
         null=False, 
@@ -109,7 +74,7 @@ class User(AbstractUser):
 
     date_joined = models.DateTimeField(auto_now_add=True)
 
-
+  
     USERNAME_FIELD = 'email'
 
     REQUIRED_FIELDS = ['username', 'password', 'first_name', 'last_name']
